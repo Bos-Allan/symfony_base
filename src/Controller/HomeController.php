@@ -8,9 +8,10 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class HomeController extends AbstractController
 {
-    #[Route('/home', name: 'home')]
+    //les 2 routes pour bien tomber sur la page d'acceuil meme sans ecrire home. 
+    #[Route('/home', name: 'home'), Route('/', name: 'homme')]
     public function index(): Response
     {
-        return $this->render('base.html.twig');
+        return $this->render('home.html.twig');
     }
 }

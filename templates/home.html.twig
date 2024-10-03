@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/home.css') }}">
+{% endblock %}
+
+{% block title %}Accueil - CRUDcroustillant{% endblock %}
+{% block body %}
+    {% block content %}
+        <h1>Bienvenue sur CRUDcroustillant !</h1>
+    {% endblock %}
+{% endblock %}

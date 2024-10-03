@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BurgerController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    {# <h1>Hello {{ controller_name }}! ✅</h1> #}
+
+    {# This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code>C:/wamp64/www/symfony/symfony_base/src/Controller/BurgerController.php</code></li>
+        <li>Your template at <code>C:/wamp64/www/symfony/symfony_base/templates/burger/index.html.twig</code></li>
+    </ul> #}    
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Liste des Burgers</h1>
+                <ul>
+                    {% for burger in burgers %}
+                    <li>{{ burger.name }} - {{ burger.price }}€ - 
+                        {% for sauce in burger.Sauce %}
+                            {{ sauce.name }}
+                        {% endfor %} - 
+                        {% for oignon in burger.oignon %}
+                            {{ oignon.name }}
+                        {% endfor %} - 
+                        {% for sauce in burger.Sauce %}
+                            {{ sauce.name }}
+                        {% endfor %} -
+                        {{burger.pain.name}} - 
+                            {% for commentaire in burger.commentaire %} 
+                            {{ commentaire.name }}
+                        {% endfor %} -
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+</div>
+{% endblock %}
